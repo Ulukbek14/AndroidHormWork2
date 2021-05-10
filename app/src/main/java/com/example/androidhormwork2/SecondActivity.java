@@ -15,9 +15,6 @@ import android.widget.ImageView;
 public class SecondActivity extends AppCompatActivity {
 
     Button browser, camera, galleries;
-    ImageView imageView;
-       public  static  final  int code=20;
-    Uri uri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +44,7 @@ public class SecondActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                Intent intent = new Intent(Intent.CATEGORY_APP_GALLERY);
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
                 intent.setType("image/*");
                 startActivityForResult(intent, 20);
@@ -55,5 +52,7 @@ public class SecondActivity extends AppCompatActivity {
             }
 
         });
+
+
     }
 }
